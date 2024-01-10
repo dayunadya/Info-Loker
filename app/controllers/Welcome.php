@@ -146,4 +146,3 @@ class Welcome extends Controller {
         exit();
     }
 }
-// test
