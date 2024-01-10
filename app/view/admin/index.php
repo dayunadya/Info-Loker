@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +23,7 @@
 
     <nav class="navbar navbar-expand-lg navy-dsbrd1">
         <div class="container-fluid">
-            <span class="navbar-brand fw-bold text-light navy-dsbrd2">Management User</span>
+            <span class="navbar-brand fw-bold text-light navy-dsbrd2"><?= $data['judul']; ?></span>
             <div class="d-flex align-items-center">
                 <div class="d-flex align-items-center">
                     <a href="<?= BASEURL; ?>/welcome/prosesLogout"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
@@ -41,15 +40,15 @@
             <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar sidebar-dsbrd1">
                 <div class="position-sticky">
                     <div class="sidebar-logo text-center mt-3">
-                        <img src="logo_gabungan.png" alt="Logo" class="img-fluid">
+                        <img src="<?= BASEURL ?>/img/logo.png" alt="Logo" class="img-fluid">
                     </div>
                     <ul class="sidebar-menu mt-5 sidebar-dsbrd2">
                         <li><i class='bx bxs-home text-light'></i>
-                            <a href="<?= BASEURL; ?>/admin/dashboard">Beranda</a>
+                            <a href="<?= BASEURL; ?>/admin">Beranda</a>
                         </li>
                         <br></br>
                         <li><i class='bx bxs-home text-light'></i>
-                            <a href="<?= BASEURL; ?>/admin">Pengguna</a>
+                            <a href="<?= BASEURL; ?>/admin/pengguna">Pengguna</a>
                         </li>
                         <br></br>
                         <li><i class='bx bx-file text-light'></i>
@@ -73,146 +72,55 @@
             ?>
 
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <!-- new end -->
-                <div class="container mt-3">
-                    <div class="row">
-                        <div class="col-log-6">
-                            <?php Flasher::flash(); ?>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg">
-                            <!-- <h3>Management User</h3> -->
 
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: 0;msFilter:0;">
-                                    <path d="M4.5 8.552c0 1.995 1.505 3.5 3.5 3.5s3.5-1.505 3.5-3.5-1.505-3.5-3.5-3.5-3.5 1.505-3.5 3.5zM19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 19h10v-1c0-2.757-2.243-5-5-5H7c-2.757 0-5 2.243-5 5v1h2z"></path>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!-- Konten Utama -->
+                <div class="container mt-5">
+                    <div class="card col-3">
+                        <div class="card-body text-center">
+                            <h4>Jumlah Pengguna</h4>
+                            <div class="icon-container d-flex align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="95" height="95" viewBox="0 0 245 245">
+                                    <path d="M12.4598 180.465C4.54943 164.577 0.453319 147.06 0.500403 129.307V129.306C0.500403 68.0935 48.1952 18.0629 108.389 14.1435V68.018C77.7292 71.6482 53.9448 97.6223 53.9448 129.306C53.9448 137.925 55.6637 146.153 58.9757 153.599L12.4598 180.465ZM176.983 136.611H230.855C229.666 154.323 224.424 171.527 215.529 186.895C206.634 202.263 194.327 215.38 179.561 225.234L152.692 178.714C165.834 168.91 174.972 153.834 176.983 136.611ZM172.976 72.0243C163.178 62.2261 150.365 56.0217 136.611 54.4064V0.532355C194.462 4.29428 240.706 50.5377 244.468 108.389H190.594C188.978 94.6354 182.774 81.8225 172.976 72.0243ZM115.695 244.5C75.6316 244.5 40.4051 224.362 19.7651 193.173L66.2855 166.304C71.9642 173.945 79.345 180.161 87.845 184.458C96.4786 188.823 106.022 191.083 115.696 191.056C124.315 191.055 132.543 189.336 139.988 186.025L166.855 232.541C151.391 240.25 134.075 244.5 115.695 244.5Z" fill="#0000FF" stroke="#0000FF"/>
                                 </svg>
-                                Tambah User
-                            </button>
-                            <!-- new -->
-                            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                                <table class="table table-hover">
-
-                                    <tr>
-                                        <th>Username</th>
-                                        <th>Nama</th>
-                                        <th>jenis_kelamin</th>
-                                        <th>tgl lahir</th>
-                                        <th>email</th>
-                                        <th>telepon </th>
-                                        <th>alamat</th>
-                                        <th>file</th>
-                                        <th>edit</th>
-                                        <th>hapus</th>
-                                    </tr>
-                                    <?php foreach ($data['msr'] as $msr) : ?>
-                                        <tr>
-                                            <td><?= $msr['nama_panggilan']; ?></td>
-                                            <td><?= $msr['nama_lengkap']; ?></td>
-                                            <td><?= $msr['jenis_kelamin']; ?></td>
-                                            <td><?= $msr['tgl_lahir']; ?></td>
-                                            <td><?= $msr['email']; ?></td>
-                                            <td><?= $msr['no_telp']; ?></td>
-                                            <td><?= $msr['alamat']; ?></td>
-                                            <td>
-                                                <?= $msr['CV']; ?><!-- <embed src="pdf/KompetensiDasarPBO.pdf" type="application/pdf" width="100" height="100"> -->
-                                            </td>
-                                            <td>
-                                                <a href="<?= BASEURL; ?>/admin/ubah/<?= $msr['id']; ?>" class="badge bg-success tampilModalUbah float-right ml-1" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $msr['id']; ?>">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform:0 ;msFilter:0;">
-                                                        <path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path>
-                                                        <path d="M19 19H8.158c-.026 0- .053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="<?= BASEURL; ?>/admin/hapus/<?= $msr['id']; ?>" class="badge bg-danger float-right ml-1" onclick="return confirm('yyakin dek?');">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform:0 ;msFilter:0;">
-                                                        <path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-
-                                </table>
-                            </main>
+                                <div class="ms-3">
+                                    <h3 class="mt-3 fw-bold"><?= count($data['recordCount']); ?></h3>
+                                    <p class="text-end">Rata-rata Pelamar</p>
+                                    <p class="text-end">Per Posisi: 10</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="formModalLabel">Tambah Data</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                <div class="container  mt-4">
+                    <div class="card col-3">
+                        <div class="card-body text-center">
+                            <h4>Jumlah Perusahaan</h4>
+                            <div class="icon-container d-flex align-items-center mt-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="95" height="95" viewBox="0 0 245 245" fill="none">
+                                    <path d="M12.4598 180.465C4.54943 164.577 0.453319 147.06 0.500403 129.307V129.306C0.500403 68.0935 48.1952 18.0629 108.389 14.1435V68.018C77.7292 71.6482 53.9448 97.6223 53.9448 129.306C53.9448 137.925 55.6637 146.153 58.9757 153.599L12.4598 180.465ZM176.983 136.611H230.855C229.666 154.323 224.424 171.527 215.529 186.895C206.634 202.263 194.327 215.38 179.561 225.234L152.692 178.714C165.834 168.91 174.972 153.834 176.983 136.611ZM172.976 72.0243C163.178 62.2261 150.365 56.0217 136.611 54.4064V0.532355C194.462 4.29428 240.706 50.5377 244.468 108.389H190.594C188.978 94.6354 182.774 81.8225 172.976 72.0243ZM115.695 244.5C75.6316 244.5 40.4051 224.362 19.7651 193.173L66.2855 166.304C71.9642 173.945 79.345 180.161 87.845 184.458C96.4786 188.823 106.022 191.083 115.696 191.056C124.315 191.055 132.543 189.336 139.988 186.025L166.855 232.541C151.391 240.25 134.075 244.5 115.695 244.5Z" fill="#87CEEB" stroke="#87CEEB"/>
+                                </svg>
+                                <div class="ms-5">
+                                    <h1 class="mt-1 fw-bold"><?= count($data['recordCount2']); ?></h1>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <form action="<?= BASEURL; ?>/muser/tambah" method="post">
-                                    <input type="hidden" name="id" id="id">
-                                    <div class="form-group ">
-                                        <label for="username">username</label>
-                                        <input type="text" class="form-control" id="username" name="username" autocomplete="off" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nama">Nama</label>
-                                        <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" required>
-                                    </div>
-                                    <div class="form-group">
-                                      
-                                        <input type="hidden" class="form-control" id="deskripsi" name="deskripsi" autocomplete="off" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jenis_kelamin">jenis_kelamin</label>
-                                        <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" autocomplete="off" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tanggal_lahir">tanggal_lahir</label>
-                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" autocomplete="off" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" autocomplete="off">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="telepon">telepon</label>
-                                        <input type="" class="form-control" id="telepon" name="telepon">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="CV">CV</label>
-                                        <input type="file" class="form-control" id="CV" length="10" name="CV">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="alamat">alamat</label>
-                                        <input type="text" class="form-control" id="alamat" name="alamat">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">password</label>
-                                        <input type="text" class="form-control" id="password" name="password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="akses">akses</label>
-                                        <input type="text" class="form-control" id="akses" name="akses">
-                                    </div>
-                                
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Tambah Data</button>
-                                </form>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="container">
+                    <div class="row justify-content-end ">
+                        <div class="col-sm-8 mb-sm-0">
+                            <div class="card kartu-dsbrd">
+                                <div class="card-body text-center">
+                                    <h3 class="fw-bold">Rata-rata Pengunjung per Bulan</h3>
+                                    <img class="mt-5 chart-img" src="<?= BASEURL; ?>/img/chart.png " alt="chart">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
-            </main>
-
-
-</body> 
+        </div>
+    </div>
+    

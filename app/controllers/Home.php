@@ -64,7 +64,7 @@ class Home extends Controller {
     public function cari()
     {
         $data['judul'] = 'Beranda';
-        $data['loker'] = $this->model('perusahaan_model')->cariLoker();
+        $data['loker'] = $this->model('loker_model')->cariLoker();
 
         if(empty($_SESSION['akses'])){
                         

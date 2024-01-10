@@ -98,9 +98,9 @@
   margin-left: 200px;
 }
 
-.sidebar-dsbrd1{
+#sidebar .sidebar-dsbrd1{
   background-color: #003364; 
-  height: 100vh;
+  height: auto;
 }
 
 .sidebar-dsbrd2 li{

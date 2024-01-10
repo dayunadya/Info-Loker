@@ -4,6 +4,17 @@ class Admin extends Controller {
     public function index()
     {
         $data['judul'] = 'Dashboard Admin';
+        $data['msr'] = $this->model('muser_model')->getAllmuser();
+        $data['recordCount']  = $this->model('muser_model')->getRecordCount(); // user
+        $data['recordCount2']  = $this->model('muser_model')->getRecordCount2(); // perusahaan
+        // $this->view('tamplates/header', $data);
+        $this->view('admin/index' , $data);
+        // $this->view('templates/footer', $data);
+    }
+    public function pengguna()
+    {
+
+        $data['judul'] = 'Management User';
         $data['msr'] = $this->model('muser_model')->getAllmuser();   
         if(empty($_SESSION['akses'])){
                         
@@ -18,19 +29,7 @@ class Admin extends Controller {
         }
 
         $this->view('templates/admin-header', $data);
-        $this->view('admin/index', $data);
-    }
-    public function dashboard()
-    {
-        $data['judul'] = 'Dashboard Admin';
-        $data['msr'] = $this->model('muser_model')->getAllmuser();
-        $data['recordCount']  = $this->model('muser_model')->getRecordCount(); // user
-        $data['recordCount2']  = $this->model('muser_model')->getRecordCount2(); // perusahaan
-        // $this->view('tamplates/header', $data);
-        $this->view('admin/dashboard' , $data);
-        // $this->view('templates/footer', $data);
-
-        
+        $this->view('admin/pengguna', $data);
     }
     public function admin()
     {

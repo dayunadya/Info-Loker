@@ -23,10 +23,10 @@
 
     <nav class="navbar navbar-expand-lg navy-dsbrd1">
         <div class="container-fluid">
-            <span class="navbar-brand fw-bold text-light navy-dsbrd2">Management User</span>
+            <span class="navbar-brand fw-bold text-light navy-dsbrd2"><?= $data['judul']; ?></span>
             <div class="d-flex align-items-center">
                 <div class="d-flex align-items-center">
-                    <a href="<?= BASEURL; ?>/login"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                    <a href="<?= BASEURL; ?>/welcome/prosesLogout"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
                             <path d="m2 12 5 4v-3h9v-2H7V8z"></path>
                             <path d="M13.001 2.999a8.938 8.938 0 0 0-6.364 2.637L8.051 7.05c1.322-1.322 3.08-2.051 4.95-2.051s3.628.729 4.95 2.051 2.051 3.08 2.051 4.95-.729 3.628-2.051 4.95-3.08 2.051-4.95 2.051-3.628-.729-4.95-2.051l-1.414 1.414c1.699 1.7 3.959 2.637 6.364 2.637s4.665-.937 6.364-2.637c1.7-1.699 2.637-3.959 2.637-6.364s-.937-4.665-2.637-6.364a8.938 8.938 0 0 0-6.364-2.637z"></path>
                         </svg></a>
@@ -40,15 +40,15 @@
             <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar sidebar-dsbrd1">
                 <div class="position-sticky">
                     <div class="sidebar-logo text-center mt-3">
-                        <img src="logo_gabungan.png" alt="Logo" class="img-fluid">
+                        <img src="<?= BASEURL ?>/img/logo.png" alt="Logo" class="img-fluid">
                     </div>
                     <ul class="sidebar-menu mt-5 sidebar-dsbrd2">
                         <li><i class='bx bxs-home text-light'></i>
-                            <a href="<?= BASEURL; ?>/admin/dashboard">Beranda</a>
+                            <a href="<?= BASEURL; ?>/admin">Beranda</a>
                         </li>
                         <br></br>
                         <li><i class='bx bxs-home text-light'></i>
-                            <a href="<?= BASEURL; ?>/admin">Pengguna</a>
+                            <a href="<?= BASEURL; ?>/admin/pengguna">Pengguna</a>
                         </li>
                         <br></br>
                         <li><i class='bx bx-file text-light'></i>
@@ -65,7 +65,7 @@
                     </ul>
                 </div>
             </nav>
-
+        
             <?php
             // Set sesi 'role' sesuai dengan peran pengguna saat login
             $_SESSION['role'] = 'admin'; // atau 'user' sesuai dengan peran pengguna
@@ -73,7 +73,7 @@
 
 
 
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <!-- Konten Utama -->
                 <div class="card kartu-profil-prs1 mt-4">
                     <div class="kartu-profil-prs mt-4" >
@@ -95,13 +95,9 @@
                             </div>
                         </div>
                     </div>
-               
-            
-                
                 </div>
-                
             </main>
-  
+        </div>
     </div>
 
     
