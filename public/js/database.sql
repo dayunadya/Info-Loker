@@ -1,0 +1,15 @@
+CREATE TABLE products(
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    link_image VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    description TEXT NOT NULL
+)
+
+CREATE TABLE users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') NOT NULL
+)

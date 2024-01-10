@@ -1,0 +1,172 @@
+* css darma */
+/* Crud Loker tambah */
+.navy-lkr-tmb1{
+  height: 40px; 
+  background-color: #003364; 
+  padding: 10px
+}
+
+.navy-lkr-tmb2{
+  margin-left: 200px; 
+  color: #ffffff; 
+}
+
+.sidebar-lkr-tmb a{
+  text-decoration: none; 
+  color:#ffffff
+}
+
+.sidebar-lkr-tmb li{
+  list-style: none; 
+  color:#ffffff
+}
+
+.card-lkr-tmb{
+  background-color: #003364;
+}
+
+.sidebar-lkr-tmb2{
+  background-color: #003364; 
+  height: 100vh;
+}
+
+/* Crud Loker update */
+.navy-lkr-up1{
+  height: 40px; 
+  background-color: #003364; 
+  padding: 10px;
+}
+
+.navy-lkr-up2{
+  margin-left: 200px; 
+}
+
+.sidebar-lkr-up2{
+  background-color: #003364; 
+  height: 100vh;
+}
+
+.sidebar-lkr-up a{
+  text-decoration: none; 
+  color:#ffffff
+}
+
+.sidebar-lkr-up li{
+  list-style: none; 
+  color:#ffffff
+}
+
+.card-lkr-up{
+  background-color: #003364;
+}
+
+
+/* Crud Loker */
+.navy-lkr1{
+  height: 40px; 
+  background-color: #003364; 
+  padding: 10px;
+}
+
+.navy-lkr2{
+  margin-left: 200px; 
+}
+
+.sidebar-lkr{
+  background-color: #003364; 
+  height: 100vh;
+}
+
+.sidebar-lkr2 li{
+  list-style: none; 
+  color:#ffffff
+}
+
+.sidebar-lkr a{
+  text-decoration: none; 
+  color:#ffffff
+}
+
+/* Dashboard perusahaan */
+.navy-dsbrd1{
+  height: 40px; 
+  background-color: #003364; 
+  padding: 10px;
+}
+
+.navy-dsbrd2{
+  margin-left: 200px;
+}
+
+.sidebar-dsbrd1{
+  background-color: #003364; 
+  height: 100vh;
+}
+
+.sidebar-dsbrd2 li{
+  list-style: none;
+}
+
+.sidebar-dsbrd2 a{
+  text-decoration: none; 
+  color:#ffffff
+}
+
+.kartu-dsbrd{
+  margin-top: -400px; 
+  margin-left: -30px;
+}
+
+.chart-img{
+  height: 300px; 
+  width: 700px;
+}
+
+/* Profil perusahaan */
+.navy-prf1{
+  height: 40px; 
+  background-color: #003364; 
+  padding: 10px;
+}
+
+.navy-prf2{
+  margin-left: 200px;    
+}
+
+.sidebar-prf1{
+  background-color: #003364; 
+  height: 100vh;
+}
+
+.sidebar-prf2 li{
+  list-style: none;
+}
+
+.sidebar-prf2 a{
+  text-decoration: none; 
+  color:#ffffff
+}
+
+.kartu-profil-prs1{
+  max-width: 1000px; 
+  padding-left: 20px;
+}
+
+.kartu-profil1 li{
+  list-style: none;
+}
+
+.kartu-profil1 h6{
+  color: #838383;
+}
+
+.kartu-profil1 .bxs-map{
+  color: #f90000;
+}
+
+.prf-img img{
+  height: 200px; 
+  width: 250px;
+}
+
+/* end darma */

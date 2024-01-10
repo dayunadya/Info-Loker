@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Young+Serif&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar,
+.nav-pills {
+  background-color: #003364;
+}
+.nav-item {
+  text-decoration: none;
+  color: white;
+}
+
+.card-link {
+  text-decoration: none;
+  color: #003364;
+}
+.card-footer{
+  background-color: #0000FF;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+label, th {
+  font-family: 'Young Serif', serif;
+}
+p,
+text,
+a,
+span,
+button, td {
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+  background-color: #003364;
+  color: white;
+}
+.footer-list {
+  color: white;
+}
+.footer-list li {
+  list-style-type: none;
+  font-family: 'Montserrat', sans-serif;
+}
+footer .custom-line{
+  padding: 5px solid white;
+}
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
