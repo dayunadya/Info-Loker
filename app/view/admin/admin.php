@@ -21,7 +21,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <!-- <script src="<?= BASEURL ?>/js/script.js"></script> -->
 
-    <nav class="navbar navbar-expand-lg navy-dsbrd1">
+    <nav class="navbar navbar-expand-lg navy-dsbrd1 position-sticky">
         <div class="container-fluid">
             <span class="navbar-brand fw-bold text-light navy-dsbrd2"><?= $data['judul']; ?></span>
             <div class="d-flex align-items-center">
@@ -55,9 +55,9 @@
                             <a href="<?= BASEURL; ?>/admin/perusahaan">Perusahaan</a>
                         </li>
                         <br></br>
-                        <li><i class='bx bx-buildings text-light'></i>
+                        <!-- <li><i class='bx bx-buildings text-light'></i>
                             <a href="<?= BASEURL; ?>/admin/admin">Admin</a>
-                        </li>
+                        </li> -->
                         <br></br>
                         <!-- <li style="list-style: none;"><i class='bx bx-buildings text-light'></i>
                             <a href="<?= BASEURL; ?>/muser/user">user</a>

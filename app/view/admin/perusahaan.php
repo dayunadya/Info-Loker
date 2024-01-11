@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman <?= $data['judul']; ?></title>
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/styleprs.css">
-    <link rel="stylesheet" href="http://localhost/phpmvc/public/css/style.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?= BASEURL ?>/js/script.js"></script>
@@ -21,7 +21,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <!-- <script src="<?= BASEURL ?>/js/script.js"></script> -->
 
-    <nav class="navbar navbar-expand-lg navy-dsbrd1">
+    <nav class="navbar navbar-expand-lg navy-dsbrd1 position-sticky">
         <div class="container-fluid">
             <span class="navbar-brand fw-bold text-light navy-dsbrd2"><?= $data['judul']; ?></span>
             <div class="d-flex align-items-center">
@@ -55,9 +55,13 @@
                             <a href="<?= BASEURL; ?>/admin/perusahaan">Perusahaan</a>
                         </li>
                         <br></br>
-                        <li><i class='bx bx-buildings text-light'></i>
-                            <a href="<?= BASEURL; ?>/admin/admin">Admin</a>
+                        <li><i class='bx bx-file text-light'></i>
+                            <a href="<?= BASEURL; ?>/admin/loker">Lowongan Kerja</a>
                         </li>
+                        <br></br>
+                        <!-- <li><i class='bx bx-buildings text-light'></i>
+                            <a href="<?= BASEURL; ?>/admin/admin">Admin</a>
+                        </li> -->
                         <br></br>
                         <!-- <li style="list-style: none;"><i class='bx bx-buildings text-light'></i>
                             <a href="<?= BASEURL; ?>/muser/user">user</a>
@@ -73,126 +77,100 @@
 
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <!-- new end -->
-                <div class="container mt-3">
+                <div class="container mt-5">
+
                     <div class="row">
-                        <div class="col-log-6">
-                            <?php Flasher::flash(); ?>
+                        <div class="col-lg-6">
+                            <?php
+                            Flasher::flash();
+                            ?>
                         </div>
                     </div>
-                    <div class="row">
-            <div class="col-lg">
-            <!-- <div class="row"> -->
-            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: 0;msFilter:0;"><path d="M4.5 8.552c0 1.995 1.505 3.5 3.5 3.5s3.5-1.505 3.5-3.5-1.505-3.5-3.5-3.5-3.5 1.505-3.5 3.5zM19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 19h10v-1c0-2.757-2.243-5-5-5H7c-2.757 0-5 2.243-5 5v1h2z"></path></svg>
-        Tambah Perusahaan
-            </button>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                
-                <div class="row align-items-center mt-5 fw-bold">
-                  
-                    <div class="col">
-                        <p class="mb-0">Nama</p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0">Deskripsi</p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0">Alamat</p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0">Email</p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0">Telepon</p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0">Action</p>
-                    </div>
-                    
-                </div>
-                <hr>
-                <?php foreach( $data['prs'] as $prs ): ?>
-                <div class="row align-items-center mt-5">
-                    
-                    <div class="col">
-                        <p class="mb-0"><?= $prs['nama']; ?></p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0"><?= $prs['deskripsi']; ?></p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0"><?= $prs['alamat']; ?></p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0"><?= $prs['email']; ?></p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0"><?= $prs['telepon']; ?></p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-0"><a href="<?= BASEURL; ?>/admin/ubah/<?= $msr['id'];?>" class="badge bg-success tampilModalUbah float-right ml-1" data-bs-toggle="modal" data-bs-target="#formModal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></a> <a href="<?= BASEURL; ?>/muser/hapus/<?= $msr['id'];?>" class="badge bg-danger float-right ml-1" onclick="return confirm('yyakin dek?');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg></a> </p>
-                    </div>
-                    <div class="col-auto">
-                        <i class='bx bxs-pencil bx-xs'></i>
-                        <i class='bx bxs-trash bx-xs'></i>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-                <hr>
-
-            </main>
-            </div>
-            
-        </div>
-    </div>
-    <div class="modal fade" id="formModal4" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="formModalLabel">Tambah Data</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-
-                                <form action="<?= BASEURL; ?>/admin/perusahaan/tambah" method="post">
-                                    <input type="hidden" name="id" id="id">
-                                  
-                                    <div class="form-group">
-                                        <label for="nama">Nama</label>
-                                        <input type="text" class="form-control" id="nama" name="nama" autocomplete="off" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jenis_kelamin">deskripsi</label>
-                                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" autocomplete="off" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="alamat">alamat</label>
-                                        <input type="text" class="form-control" id="alamat" name="alamat" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" autocomplete="off" required>
-                                    </div>
 
 
-                                    <div class="form-group">
-                                        <label for="telepon">telepon</label>
-                                        <input type="number" class="form-control" id="telepon" name="telepon" required>
-                                    </div>
-                                    
+                    <h3 class="fw-bold text-center">Data perusahaan</h3>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btnTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
+                        Tambah Data Perusahaan
+                    </button>
 
 
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Tambah Data PeruSsahaan</button>
-                                </form>
+
+                    <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
+                        <tr>
+                            <td>Nama Perusahaan</td>
+                            <td>Deskripsi</td>
+                            <td>Email</td>
+                            <td>Telepon</td>
+                            <td>Alamat</td>
+                            <td>Action</td>
+
+                        </tr>
+                        <?php $i = 1; ?>
+                        <?php foreach ($data['Prs'] as $Prs) : ?>
+                            <tr>
+                                <td><?= $Prs['nama_perusahaan']; ?></td>
+                                <td><?= $Prs['deskripsi']; ?></td>
+                                <td><?= $Prs['email']; ?></td>
+                                <td><?= $Prs['telepon']; ?></td>
+                                <td><?= $Prs['alamat']; ?></td>
+                                <td>
+                                    <a href="<?= BASEURL; ?>/admin/detail/<?= $Prs['id_prs'] ?>" class="btn btn-success badge badge-primary badge-pill">Detail</a>
+                                    <a href="<?= BASEURL; ?>/admin/edit/<?= $Prs['id_prs'] ?>" class="btn btn-warning badge badge-primary tampilModalUbah badge-pill " data-id="<?= $Prs['id_prs']; ?>">Ubah</a>
+                                    <a href="<?= BASEURL; ?>/admin/hapusprs/<?= $Prs['id_prs'] ?>" class="btn btn-danger badge badge-primary badge-pill" onclick="return confirm('yakin?');">Hapus</a>
+                        </td>
+                            </tr>
+                            <?php $i++ ?>
+                        <?php endforeach; ?>
+                    </table>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="FormModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="FormModal">Tambah Data Perusahaan</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <form action="<?= BASEURL; ?>/admin/tambahprs" method="POST">
+                                        <input type="hidden" name="id_prs" id="id_prs">
+                                        <div class="form-group">
+                                            <label for="name">Nama Perusahaan</label>
+                                            <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan">
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="name">Deskripsi Perusahaan</label>
+                                            <input type="text" class="form-control" id="deskripsi" name="deskripsi">
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="email">Email</label>
+                                            <input type="text" class="form-control" id="email" name="email">
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="job">Telepon</label>
+                                            <input type="number" class="form-control" id="telepon" name="telepon">
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label for="address">Alamat</label>
+                                            <textarea class="form-control" id="alamat" name="alamat"></textarea>
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Tambah Data</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
-            </main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?= BASEURL; ?>/js/bootstrap.js"></script>
+<script src="<?= BASEURL; ?>/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>

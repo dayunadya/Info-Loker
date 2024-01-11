@@ -12,14 +12,14 @@ $(function() {
         
         $('#judulModal').html('Ubah Data Loker');
         $('.modal-footer button[type=submit]').html('Ubah Data');
-        $('.modal-body form').attr('action', 'http://localhost/InfoLoker/public/perusahaan/ubah');
+        $('.modal-body form').attr('action', 'http://localhost/InfoLoker/public/admin/ubahlkr');
 
         //ketika tombolnya ditekan, maka otomatis mengambil idnya
         const id = $(this).data('id');
 
 
         $.ajax({
-            url: 'http://localhost/InfoLoker/public/perusahaan/getUbah',
+            url: 'http://localhost/InfoLoker/public/admin/getUbahlkr',
             data: {id_loker : id},
             method: 'post',
             dataType: 'json',

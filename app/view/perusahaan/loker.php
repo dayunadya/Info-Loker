@@ -49,9 +49,9 @@
                             <a href="<?= BASEURL; ?>/perusahaan/loker">Loker</a>
                         </li>
                         <br></br>
-                        <li><i class='bx bx-buildings text-light'></i>
+                        <!-- <li><i class='bx bx-buildings text-light'></i>
                             <a href="<?= BASEURL; ?>/perusahaan/profile">Profile</a>
-                        </li>
+                        </li> -->
                         <br></br>
                     </ul>
                 </div>

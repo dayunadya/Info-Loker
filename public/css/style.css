@@ -61,3 +61,7 @@ a {
   list-style-type: none;
   text-decoration: none;
 }
+
+@media (max-width : 768px) {
+  
+}

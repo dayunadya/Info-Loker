@@ -1,4 +1,4 @@
-* css darma */
+
 /* Crud Loker tambah */
 .navy-lkr-tmb1{
   height: 40px; 
@@ -91,16 +91,24 @@
 .navy-dsbrd1{
   height: 40px; 
   background-color: #003364; 
-  padding: 10px;
+  overflow: hidden;
+  z-index: 1;
+  padding: 10px; /* Padding atas dan bawah navbar */
+  top: 0;
+  right: 0;
+  left: -5px; /* Sesuaikan dengan lebar sidebar */
 }
+
 
 .navy-dsbrd2{
-  margin-left: 200px;
+  margin-left: 250px;
 }
 
-#sidebar .sidebar-dsbrd1{
+.sidebar-dsbrd1{
   background-color: #003364; 
-  height: auto;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
 }
 
 .sidebar-dsbrd2 li{
@@ -167,6 +175,26 @@
 .prf-img img{
   height: 200px; 
   width: 250px;
+}
+
+/* edit */
+.form-style {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.form-style .form-group {
+  margin-bottom: 15px;
+}
+
+.form-style .form-control {
+  border-radius: 5px;
+}
+
+.form-style .btn {
+  width: 100%;
 }
 
 /* end darma */

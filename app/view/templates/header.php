@@ -38,6 +38,10 @@
       <a href="<?= BASEURL; ?>/home" class="span" style="text-decoration: none; color: white;">Beranda</a>
     </div>
     <div class="nav-item">
+      <i class="fa-solid fa-briefcase"></i>
+      <a href="<?= BASEURL; ?>/home/loker" class="span" style="text-decoration: none; color: white;">Loker</a>
+    </div>
+    <!-- <div class="nav-item">
       <i class="fas fa-book nav-icon"></i>
       <a href="" class="span" style="text-decoration: none; color: white;">Koleksi</a>
     </div>
@@ -48,7 +52,7 @@
     <div class="nav-item">
       <i class="fas fa-user nav-icon"></i>
       <a href="<?= BASEURL; ?>/user" class="span" style="text-decoration: none; color: white;"  >Pengguna</a>
-    </div>
+    </div> -->
     <div class="nav-item">
       <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff;"></i>
       <a href="<?= BASEURL; ?>/welcome/prosesLogout" class="span" style="text-decoration: none; color: white;"  >Logout</a>
