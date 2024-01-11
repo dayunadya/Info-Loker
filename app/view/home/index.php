@@ -1,9 +1,9 @@
 <!-- banner -->
-<main style="
+<main id="home" style="
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(<?= BASEURL; ?>/img/home-bg.jpg);
   background-size: cover;
   color: white;">
-<div class="container" style="height: 50vh;">
+<div class="container home" style="height: 50vh;">
     <div class="text-center p-5 pt-5">
         <h1>Selamat Datang di Info Loker!</h1>
         <p>Temukan lowongan pekerjaan yang sesuai dengan Anda di sini</p>

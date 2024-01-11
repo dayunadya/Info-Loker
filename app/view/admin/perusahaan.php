@@ -26,10 +26,12 @@
             <span class="navbar-brand fw-bold text-light navy-dsbrd2"><?= $data['judul']; ?></span>
             <div class="d-flex align-items-center">
                 <div class="d-flex align-items-center">
-                    <a href="<?= BASEURL; ?>/welcome/prosesLogout"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                    <a href="<?= BASEURL; ?>/welcome/prosesLogout">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1); transform: ; msFilter:;">
                             <path d="m2 12 5 4v-3h9v-2H7V8z"></path>
                             <path d="M13.001 2.999a8.938 8.938 0 0 0-6.364 2.637L8.051 7.05c1.322-1.322 3.08-2.051 4.95-2.051s3.628.729 4.95 2.051 2.051 3.08 2.051 4.95-.729 3.628-2.051 4.95-3.08 2.051-4.95 2.051-3.628-.729-4.95-2.051l-1.414 1.414c1.699 1.7 3.959 2.637 6.364 2.637s4.665-.937 6.364-2.637c1.7-1.699 2.637-3.959 2.637-6.364s-.937-4.665-2.637-6.364a8.938 8.938 0 0 0-6.364-2.637z"></path>
-                        </svg></a>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -79,6 +81,7 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="container mt-5">
 
+                    <h3 class="fw-bold text-center">Data perusahaan</h3>
                     <div class="row">
                         <div class="col-lg-6">
                             <?php
@@ -88,7 +91,6 @@
                     </div>
 
 
-                    <h3 class="fw-bold text-center">Data perusahaan</h3>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary btnTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
                         Tambah Data Perusahaan

@@ -9,14 +9,22 @@ class muser_model {
         $this->db = new Database;
     }
     public function getAllmuser(){
-        $this->db->query('SELECT * FROM data_pengguna WHERE akses = "User"');
+        $this->db->query('SELECT * FROM data_pengguna');
         return $this->db->resultSet();
     }
     public function getRecordCount() {
         $this->db->query('SELECT * FROM data_pengguna WHERE akses = "User"');
         return $this->db->resultSet();
     }
+    // public function getRecordCount2() {
+    //     $this->db->query('SELECT * FROM data_pengguna WHERE akses = "Perusahaan"');
+    //     return $this->db->resultSet();
+    // }
     public function getRecordCount2() {
+        $this->db->query('SELECT * FROM perusahaan');
+        return $this->db->resultSet();
+    }
+    public function getRecordCount3() {
         $this->db->query('SELECT * FROM data_pengguna WHERE akses = "Perusahaan"');
         return $this->db->resultSet();
     }

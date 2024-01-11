@@ -35,6 +35,19 @@ class Admin extends Controller {
     {
         $data['judul'] = 'Profil Admin';
         $data['msr'] = $this->model('muser_model')->getAllmuser (); // getalluntuk?
+
+        if(empty($_SESSION['akses'])){
+                        
+            header('Location: '. BASEURL .'/login');
+
+        }else if($_SESSION['akses'] == 'User') {
+            
+            header('Location: '. BASEURL .'/home');
+        }else if($_SESSION['akses'] == 'Perusahaan') {
+            
+            header('Location: '. BASEURL .'/perusahaan');
+        }
+
         // $this->view('tamplates/header', $data);
         $this->view('admin/admin' , $data);
         // $this->view('templates/footer', $data);
@@ -45,6 +58,19 @@ class Admin extends Controller {
     {
         $data['judul'] = 'Manajemen Perusahaan';
         $data['Prs'] = $this->model('prs_model')->getAllPerusahaan();
+
+        if(empty($_SESSION['akses'])){
+                        
+            header('Location: '. BASEURL .'/login');
+
+        }else if($_SESSION['akses'] == 'User') {
+            
+            header('Location: '. BASEURL .'/home');
+        }else if($_SESSION['akses'] == 'Perusahaan') {
+            
+            header('Location: '. BASEURL .'/perusahaan');
+        }
+
         // $this->view('tamplates/header', $data);
         $this->view('admin/perusahaan' , $data);
         // $this->view('tamplates/footer', $data);
@@ -54,6 +80,19 @@ class Admin extends Controller {
     {
         $data['title'] = 'Detail Perusahaan';
         $data['Prs'] = $this->model('prs_model')->getAllPerusahaanById($id);
+
+        if(empty($_SESSION['akses'])){
+                        
+            header('Location: '. BASEURL .'/login');
+
+        }else if($_SESSION['akses'] == 'User') {
+            
+            header('Location: '. BASEURL .'/home');
+        }else if($_SESSION['akses'] == 'Perusahaan') {
+            
+            header('Location: '. BASEURL .'/perusahaan');
+        }
+
         $this->view('templates/admin-header', $data);
         $this->view('admin/detail', $data);
     }
@@ -174,11 +213,14 @@ class Admin extends Controller {
 
         if(empty($_SESSION['akses'])){
                         
-            header('Location: '. BASEURL .'/welcome/login');
+            header('Location: '. BASEURL .'/login');
 
         }else if($_SESSION['akses'] == 'User') {
             
             header('Location: '. BASEURL .'/home');
+        }else if($_SESSION['akses'] == 'Perusahaan') {
+            
+            header('Location: '. BASEURL .'/perusahaan');
         }
 
         $this->view('templates/admin-header', $data);
@@ -189,6 +231,19 @@ class Admin extends Controller {
     {
         $data['judul'] = 'Detail Loker';
         $data['loker'] = $this->model('loker_model')->getLokerById($id);
+
+        if(empty($_SESSION['akses'])){
+                        
+            header('Location: '. BASEURL .'/login');
+
+        }else if($_SESSION['akses'] == 'User') {
+            
+            header('Location: '. BASEURL .'/home');
+        }else if($_SESSION['akses'] == 'Perusahaan') {
+            
+            header('Location: '. BASEURL .'/perusahaan');
+        }
+
         $this->view('templates/admin-header', $data);
         $this->view('admin/detaillkr', $data);
     }
