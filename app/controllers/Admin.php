@@ -7,7 +7,7 @@ class Admin extends Controller {
         $data['msr'] = $this->model('muser_model')->getAllmuser();
         $data['recordCount']  = $this->model('muser_model')->getRecordCount(); // user
         $data['recordCount2']  = $this->model('muser_model')->getRecordCount2(); // perusahaan
-        // $this->view('tamplates/header', $data);
+        $this->view('templates/admin-header', $data);
         $this->view('admin/index' , $data);
         // $this->view('templates/footer', $data);
     }
@@ -48,7 +48,7 @@ class Admin extends Controller {
             header('Location: '. BASEURL .'/perusahaan');
         }
 
-        // $this->view('tamplates/header', $data);
+        $this->view('templates/admin-header', $data);
         $this->view('admin/admin' , $data);
         // $this->view('templates/footer', $data);
     }
@@ -71,7 +71,7 @@ class Admin extends Controller {
             header('Location: '. BASEURL .'/perusahaan');
         }
 
-        // $this->view('tamplates/header', $data);
+        $this->view('templates/admin-header', $data);
         $this->view('admin/perusahaan' , $data);
         // $this->view('tamplates/footer', $data);
     }
@@ -149,7 +149,7 @@ class Admin extends Controller {
     {
         $data['judul'] = 'user integrasi';
         $data['usr'] = $this->model('muser_model')->getAlluser();
-        // $this->view('tamplates/header', $data);
+        $this->view('templates/admin-header', $data);
         $this->view('admin/user' , $data);
         // $this->view('tamplates/footer', $data);
     }
