@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <?php
-                            Flasher::flash();
+                            Flasher::flashperu();
                             ?>
                         </div>
                     </div>

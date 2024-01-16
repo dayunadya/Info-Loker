@@ -1,6 +1,6 @@
 
 
-            <?php
+<?php
             // Set sesi 'role' sesuai dengan peran pengguna saat login
             $_SESSION['role'] = 'admin'; // atau 'user' sesuai dengan peran pengguna
             ?>
@@ -13,7 +13,7 @@
                 <div class="container mt-3">
                     <div class="row">
                         <div class="col-log-6">
-                            <?php Flasher::flash(); ?>
+                            <?php Flasher::flashuser(); ?>
                         </div>
                     </div>
                     <div class="row">
@@ -34,26 +34,20 @@
                                         <th>Username</th>
                                         <th>Nama</th>
                                         <th>jenis_kelamin</th>
-                                        <th>tgl lahir</th>
                                         <th>email</th>
                                         <th>telepon </th>
                                         <th>alamat</th>
-                                        <th>file</th>
                                         <th>edit</th>
                                         <th>hapus</th>
                                     </tr>
                                     <?php foreach ($data['msr'] as $msr) : ?>
                                         <tr>
-                                            <td><?= $msr['nama_panggilan']; ?></td>
-                                            <td><?= $msr['nama_lengkap']; ?></td>
+                                            <td><?= $msr['username']; ?></td>
+                                            <td><?= $msr['nama']; ?></td>
                                             <td><?= $msr['jenis_kelamin']; ?></td>
-                                            <td><?= $msr['tgl_lahir']; ?></td>
                                             <td><?= $msr['email']; ?></td>
                                             <td><?= $msr['no_telp']; ?></td>
                                             <td><?= $msr['alamat']; ?></td>
-                                            <td>
-                                                <?= $msr['CV']; ?><!-- <embed src="pdf/KompetensiDasarPBO.pdf" type="application/pdf" width="100" height="100"> -->
-                                            </td>
                                             <td>
                                                 <a href="<?= BASEURL; ?>/admin/ubah/<?= $msr['id']; ?>" class="badge bg-success tampilModalUbah float-right ml-1" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $msr['id']; ?>">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform:0 ;msFilter:0;">
@@ -63,7 +57,7 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="<?= BASEURL; ?>/admin/hapus/<?= $msr['id']; ?>" class="badge bg-danger float-right ml-1" onclick="return confirm('yyakin dek?');">
+                                                <a href="<?= BASEURL; ?>/admin/hapus/<?= $msr['id']; ?>" class="badge bg-danger float-right ml-1" onclick="return confirm('Apakah anda yakin untuk menghapusnya?');">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform:0 ;msFilter:0;">
                                                         <path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path>
                                                     </svg>
@@ -90,7 +84,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="<?= BASEURL; ?>/muser/tambah" method="post">
+                                <form action="<?= BASEURL; ?>/admin/tambah" method="post">
                                     <input type="hidden" name="id" id="id">
                                     <div class="form-group ">
                                         <label for="username">username</label>
@@ -108,22 +102,16 @@
                                         <label for="jenis_kelamin">jenis_kelamin</label>
                                         <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" autocomplete="off" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="tanggal_lahir">tanggal_lahir</label>
-                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" autocomplete="off" required>
-                                    </div>
+                                  
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="email" class="form-control" id="email" name="email" autocomplete="off">
                                     </div>
                                     <div class="form-group">
-                                        <label for="telepon">telepon</label>
-                                        <input type="" class="form-control" id="telepon" name="telepon">
+                                        <label for="no_telp">telepon</label>
+                                        <input type="" class="form-control" id="no_telp" name="no_telp">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="CV">CV</label>
-                                        <input type="file" class="form-control" id="CV" length="10" name="CV">
-                                    </div>
+                                   
                                     <div class="form-group">
                                         <label for="alamat">alamat</label>
                                         <input type="text" class="form-control" id="alamat" name="alamat">

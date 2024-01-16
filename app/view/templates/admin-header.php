@@ -13,7 +13,7 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="<?= BASEURL ?>/js/script.js"></script>
+    <script src="<?= BASEURL ?>/js/scriptadmin.js"></script>
 
 </head>
 

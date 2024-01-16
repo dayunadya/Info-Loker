@@ -76,9 +76,10 @@ class Admin extends Controller {
         // $this->view('tamplates/footer', $data);
     }
 
+    //Perusahaan di Admin
     public function detail($id)
     {
-        $data['title'] = 'Detail Perusahaan';
+        $data['judul'] = 'Detail Perusahaan';
         $data['Prs'] = $this->model('prs_model')->getAllPerusahaanById($id);
 
         if(empty($_SESSION['akses'])){
@@ -98,7 +99,7 @@ class Admin extends Controller {
     }
     public function edit($id){
 
-		$data['title'] = 'Detail Perusahaan';
+		$data['judul'] = 'Detail Perusahaan';
 		$data['Prs'] = $this->model('prs_model')->getAllPerusahaanById($id);
         $this->view('templates/admin-header', $data);
 		$this->view('admin/edit', $data);
@@ -153,16 +154,17 @@ class Admin extends Controller {
         $this->view('admin/user' , $data);
         // $this->view('tamplates/footer', $data);
     }
-    // manage user
+
+    // Manage user in admin
     public function tambah()
     {
         if( $this->model('muser_model')->tambahDatamuser($_POST) > 0 ) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location: ' . BASEURL . '/admin');
+            header('Location: ' . BASEURL . '/admin/pengguna');
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location: ' . BASEURL . '/admin');
+            header('Location: ' . BASEURL . '/admin/pengguna');
             exit;
         }
     }
@@ -170,11 +172,11 @@ class Admin extends Controller {
     {
         if( $this->model('muser_model')->hapusDatamuser($id) > 0 ) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location: ' . BASEURL . '/admin');
+            header('Location: ' . BASEURL . '/admin/pengguna');
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location: ' . BASEURL . '/admin');
+            header('Location: ' . BASEURL . '/admin/pengguna');
             exit;
         }
         
@@ -184,12 +186,11 @@ class Admin extends Controller {
     {
         if( $this->model('muser_model')->ubahDatamuser($_POST) > 0 ) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location: ' . BASEURL . '/muser');
+            header('Location: ' . BASEURL . '/admin/pengguna');
             exit;
         } else { 
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location: ' . BASEURL . '/muser');
-            
+            header('Location: ' . BASEURL . '/admin/pengguna');
             exit;
         } 
     }

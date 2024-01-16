@@ -2,44 +2,48 @@
 
 class muser_model {
     private $db;
-    private $table = 'data_pengguna';
+    private $table = 'pengguna';
     private $table2 = 'loker'; // Ubah tabel menjadi 'siswa'
 
     public function __construct() {
         $this->db = new Database;
     }
     public function getAllmuser(){
-        $this->db->query('SELECT * FROM data_pengguna');
+        $this->db->query('SELECT * FROM pengguna WHERE akses = "User"');
+        return $this->db->resultSet();
+    }
+    public function getAlldb(){
+        $this->db->query('SELECT * FROM pengguna WHERE akses = "Admin"');
         return $this->db->resultSet();
     }
     public function getRecordCount() {
-        $this->db->query('SELECT * FROM data_pengguna WHERE akses = "User"');
+        $this->db->query('SELECT * FROM pengguna WHERE akses = "User"');
+        return $this->db->resultSet();
+    }
+    public function getRecordCount2() {
+        $this->db->query('SELECT * FROM pengguna WHERE akses = "Perusahaan"');
         return $this->db->resultSet();
     }
     // public function getRecordCount2() {
-    //     $this->db->query('SELECT * FROM data_pengguna WHERE akses = "Perusahaan"');
+    //     $this->db->query('SELECT * FROM perusahaan');
     //     return $this->db->resultSet();
     // }
-    public function getRecordCount2() {
-        $this->db->query('SELECT * FROM perusahaan');
-        return $this->db->resultSet();
-    }
     public function getRecordCount3() {
-        $this->db->query('SELECT * FROM data_pengguna WHERE akses = "Perusahaan"');
+        $this->db->query('SELECT * FROM  pengguna WHERE akses = "Perusahaan"');
         return $this->db->resultSet();
     }
     
     public function getAllperu(){
-        $this->db->query('SELECT * FROM data_pengguna WHERE akses = "Perusahaan"');
+        $this->db->query('SELECT * FROM pengguna WHERE akses = "Perusahaan"');
     return $this->db->resultSet();
     }
     public function getAlluser(){
-        $this->db->query('SELECT * FROM data_pengguna');
+        $this->db->query('SELECT * FROM pengguna');
     return $this->db->resultSet();
     }
     public function tambahDatamuser($data) {
-        if (isset($data['username']) && isset($data['nama']) && isset($data['deskripsi']) && isset($data['jenis_kelamin']) && isset($data['tanggal_lahir']) && isset($data['email']) && isset($data['telepon']) && isset($data['alamat']) && isset($data['CV']) && isset($data['password']) && isset($data['akses'])) {
-            $query = "INSERT INTO users (username, nama, deskripsi, jenis_kelamin, tanggal_lahir, email, telepon, alamat, CV, password, akses) VALUES (:username, :nama, :deskripsi, :jenis_kelamin, :tanggal_lahir, :email, :telepon, :alamat, :CV, :password, :akses)";
+        if (isset($data['username']) && isset($data['nama']) && isset($data['deskripsi']) && isset($data['jenis_kelamin']) && isset($data['email']) && isset($data['no_telp']) && isset($data['alamat']) && isset($data['password']) && isset($data['akses'])) {
+            $query = "INSERT INTO pengguna (username, nama, deskripsi, jenis_kelamin, email, no_telp, alamat,  password, akses) VALUES (:username, :nama, :deskripsi, :jenis_kelamin, :email, :no_telp, :alamat,  :password, :akses)";
     
             $this->db->query($query);
     
@@ -47,11 +51,9 @@ class muser_model {
             $this->db->bind('nama', $data['nama']);
             $this->db->bind('deskripsi', $data['deskripsi']);
             $this->db->bind('jenis_kelamin', $data['jenis_kelamin']);
-            $this->db->bind('tanggal_lahir', $data['tanggal_lahir']);
             $this->db->bind('email', $data['email']);
-            $this->db->bind('telepon', $data['telepon']);
+            $this->db->bind('no_telp', $data['no_telp']);
             $this->db->bind('alamat', $data['alamat']);
-            $this->db->bind('CV', $data['CV']);
             $this->db->bind('password', $data['password']);
             $this->db->bind('akses', $data['akses']);
     
@@ -65,7 +67,7 @@ class muser_model {
     }
     public function hapusDatamuser($id)
     {
-        $query = "DELETE FROM data_pengguna WHERE id = :id";
+        $query = "DELETE FROM pengguna WHERE id = :id";
         
         $this->db->query($query);
         $this->db->bind('id', $id);
@@ -75,34 +77,34 @@ class muser_model {
         return $this->db->rowCount();
     }
     public function ubahDatamuser($data) {
-        $query = "UPDATE data_pengguna SET 
+        $query = "UPDATE pengguna SET 
             username = :username,
             nama = :nama,
             jenis_kelamin = :jenis_kelamin,
-            tanggal_lahir = :tanggal_lahir,
             email = :email,
-            telepon = :telepon,
+            no_telp = :no_telp,
             alamat = :alamat,
-            CV = :CV
+            password = :password,
+            akses = :akses
         WHERE id = :id";
     
         $this->db->query($query);
     
+        $this->db->bind('id', $data['id']);  // Add this line to bind the 'id' parameter
         $this->db->bind('username', $data['username']);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('jenis_kelamin', $data['jenis_kelamin']);
-        $this->db->bind('tanggal_lahir', $data['tanggal_lahir']);
         $this->db->bind('email', $data['email']);
-        $this->db->bind('telepon', $data['telepon']);
+        $this->db->bind('no_telp', $data['no_telp']);
         $this->db->bind('alamat', $data['alamat']);
-        $this->db->bind('CV', $data['CV']);
-        $this->db->bind('id', $data['id']);
-      
+        $this->db->bind('password', $data['password']);
+        $this->db->bind('akses', $data['akses']);
     
         $this->db->execute();
     
         return $this->db->rowCount();
     }
+    
     public function getMuserById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');

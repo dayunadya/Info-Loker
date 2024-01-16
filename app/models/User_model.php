@@ -1,7 +1,7 @@
 <?php
 
 class User_model {
-    private $table = 'data_pengguna';
+    private $table = 'pengguna';
     private $db;
 
     public function __construct() {
