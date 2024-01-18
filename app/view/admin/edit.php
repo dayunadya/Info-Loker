@@ -9,14 +9,13 @@
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5 text-center mb-4" id="FormModal">Ubah Data Perusahaan</h1>
                                     <hr />
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="<?= BASEURL; ?>/admin/updatePerusahaan" method="POST">
-                                        <input type="hidden" name="id_prs" id="id_prs" value="<?= $data['Prs']['id_prs'] ?>">
+                                        <input type="hidden" name="id" id="id" value="<?= $data['Prs']['id'] ?>">
                                         <div class="form-group">
                                             <label for="name">Nama Perusahaan</label>
-                                            <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" value="<?= $data['Prs']['nama_perusahaan']; ?>">
+                                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $data['Prs']['nama']; ?>">
                                             <div class="form-group mt-3">
                                                 <label for="name">Deskripsi Perusahaan</label>
                                                 <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?= $data['Prs']['deskripsi']; ?>">
@@ -27,7 +26,7 @@
                                             </div>
                                             <div class="form-group mt-3">
                                                 <label for="job">Telepon</label>
-                                                <input type="number" class="form-control" id="telepon" name="telepon" value="<?= $data['Prs']['telepon']; ?>">
+                                                <input type="number" class="form-control" id="no_telp" name="no_telp" value="<?= $data['Prs']['no_telp']; ?>">
                                             </div>
                                             <div class="form-group mt-3">
                                                 <label for="address">Alamat</label>

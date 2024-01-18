@@ -1,0 +1,53 @@
+@media (max-width: 768px) {
+    #home {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/img/home-bg.jpg);
+      background-size: cover;
+      color: white;
+      height: 30vh; /* Adjusted height for smaller screens */
+    }
+  
+    .container.home {
+      height: auto; /* Adjusted height for smaller screens */
+    }
+  
+    .text-center.d-flex {
+      flex-direction: column; /* Stacking elements vertically on smaller screens */
+    }
+  
+    .form-control {
+      width: 100%; /* Make the search input full width on smaller screens */
+      margin-bottom: 10px; /* Added margin for better spacing */
+    }
+  
+    .btn.btn-outline-light {
+      width: 100%; /* Make the search button full width on smaller screens */
+    }
+  
+    .heading.d-flex {
+      flex-direction: column; /* Stacking elements vertically on smaller screens */
+    }
+  
+    .d-flex.ms-auto {
+      margin-top: 10px; /* Added margin for better spacing */
+    }
+  
+    .container.mt-4 {
+      padding: 0 10px; /* Added padding for better spacing */
+    }
+  
+    .col-6.col-lg-4 {
+      width: 100%; /* Make the columns full width on smaller screens */
+    }
+  
+    .card.shadow-lg.mb-5.rounded.h-70 {
+      height: auto; /* Adjusted height for smaller screens */
+    }
+  }
+   
+
+  /* responive for navbar boleh dihapus karena sebagai contoh */
+  @media (max-width: 568px) {
+    .nav-item span{
+      overflow: hidden;
+    }
+  }

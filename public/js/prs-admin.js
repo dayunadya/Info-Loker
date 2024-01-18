@@ -10,21 +10,21 @@ $(function () {
         $('#FormModal').html('Ubah Data Perusahaan');
         $('.modal-footer button[type=submit]').html('Ubah Data');
         $('.modal-body form').attr('action', 'http://localhost/InfoLoker/public/admin/ubahPerusahaan');
-        const id = $(this).data('id_prs');
+        const id = $(this).data('id');
 
         //console.log(id);
         $.ajax({
             url: 'http://localhost/InfoLoker/public/admin/getubahprs',
-            data: { id_prs: id },
+            data: { id: id },
             method: 'post',
             dataType: 'json',
             success: function (data) {
-                $('#nama_perusahaan').val(data.nama_perusahaan);
+                $('#nama').val(data.nama);
                 $('#deskripsi').val(data.deskripsi);
                 $('#email').val(data.email);
-                $('#telepon').val(data.telepon);
+                $('#no_telp').val(data.no_telp);
                 $('#alamat').val(data.alamat);
-                $('#id_prs').val(data.id_prs);
+                $('#id').val(data.id);
             }
         })
 

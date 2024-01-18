@@ -23,26 +23,39 @@
                 <div class="modal-body">
 
                     <form action="<?= BASEURL; ?>/admin/tambahprs" method="POST">
-                        <input type="hidden" name="id_prs" id="id_prs">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-group">
+                            <label for="username">username</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="" value="">
+                        </div>
                         <div class="form-group">
                             <label for="name">Nama Perusahaan</label>
-                            <input type="text" class="form-control" name="name" id="nama_perusahaan" placeholder="" value="">
+                            <input type="text" class="form-control" name="nama" id="nama" placeholder="" value="">
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Deskripsi Perusahaan</label>
                             <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Deskripsi" value="">
                         </div>
+                        <input type="hidden" class="form-control" name="jenis_kelamin" id="jenis_kelamin" placeholder="Deskripsi" value="">
                         <div class="form-group mt-3">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan Email Perusahaan" value="">
                         </div>
                         <div class="form-group mt-3">
                             <label for="job">Telepon</label>
-                            <input type="number" class="form-control" name="telepon" id="telepon" placeholder="Masukkan no telepon" value="">
+                            <input type="number" class="form-control" name="no_telp" id="no_telpa" placeholder="Masukkan no telepon" value="">
                         </div>
                         <div class="form-group mt-3">
                             <label for="address">Alamat</label>
                             <textarea class="form-control" name="alamat" id="address" placeholder="Masukkan Alamat" value=""></textarea>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="password">Password</label>
+                            <textarea class="form-control" name="password" id="password" placeholder="Masukkan Alamat" value=""></textarea>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="akses">akses</label>
+                            <textarea class="form-control" name="akses" id="akses" placeholder="Masukkan akses" value=""></textarea>
                         </div>
                 </div>
                 <div class="modal-footer">

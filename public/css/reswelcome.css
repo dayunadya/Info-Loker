@@ -1,0 +1,55 @@
+@media (max-width: 768px) {
+  .navbar-brand img {
+    width: 150px; /* Ubah lebar logo sesuai kebutuhan di layar kecil */
+  }
+
+  main#login {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../public/img/home-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: auto;
+  }
+
+  main#login .container.text-center.text-light {
+    padding: 20px;
+  }
+
+  main#login h1 {
+    font-size: 2.5rem;
+  }
+
+  main#login p {
+    font-size: 1.2rem;
+  }
+
+  main#login .d-flex.justify-content-center.pt-4 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main#login .btn-group {
+    flex-direction: row; /* Mengatur agar tombol tetap bersebelahan */
+  }
+
+  main#login .btn {
+    margin-bottom: 10px;
+    margin-right: 10px; /* Memberikan margin antar tombol */
+  }
+}
+
+/* Responsif tambahan jika diperlukan untuk ukuran layar yang lebih kecil */
+@media (max-width: 576px) {
+
+  .navbar-brand img {
+    width: 150px;
+    height: 60px;
+  }
+
+  main#login h1 {
+    font-size: 1rem;
+  }
+
+  main#login p {
+    font-size: 0.7rem;
+  }
+}

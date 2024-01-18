@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= $data['judul']?></title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
+  <link rel="stylesheet" href="<?= BASEURL; ?>/css/reswelcome.css">
 
   <!-- CSS Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,14 +32,16 @@
 
 <!-- main -->
 <main id="login" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../public/img/home-bg.jpg); background-size: cover; background-position: center; width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <div class="container text-center text-light">
-        <h1 style="font-size: 3.5rem;">Info Loker</h1>
-        <p style="font-size: 1.5rem;">Gudang Informasi Lowongan Kerja Lengkap!</p>
-    </div>
-    <div class="d-flex justify-content-center pt-4">
-        <a class="btn me-3" style="background-color: #2555FF; color: white;" href="<?= BASEURL ?>/welcome/login">Masuk</a>
-        <a class="btn" style="background-color: #2555FF; color: white;" href="<?= BASEURL ?>/welcome/register">Daftar</a>
-    </div>
+  <div class="container text-center text-light">
+      <h1 style="font-size: 3.5rem;">Info Loker</h1>
+      <p style="font-size: 1.5rem;">Gudang Informasi Lowongan Kerja Lengkap!</p>
+  </div>
+  <div class="d-flex justify-content-center pt-4">
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <a class="btn me-3" style="background-color: #2555FF; color: white;" href="<?= BASEURL ?>/welcome/login">Masuk</a>
+          <a class="btn" style="background-color: #2555FF; color: white;" href="<?= BASEURL ?>/welcome/register">Daftar</a>
+      </div>
+  </div>
 </main>
 
 <!-- main -->

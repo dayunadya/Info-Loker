@@ -27,13 +27,13 @@
 
     <div class="container text-center">
       <div class="row">
-        <div class="col-6 col-lg-4">
+        <div class="col-6 col-lg-4 col-sm-2">
           <hr class="custom-line">
         </div>
         <div class="col-6 col-lg-4">
           COPYRIGHT 2023 KELOMPOK 5
         </div>
-        <div class="col-6 col-lg-4">
+        <div class="col-6 col-lg-4 col-sm-2">
           <hr class="custom-line">
         </div>
       </div>

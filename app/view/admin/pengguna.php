@@ -33,12 +33,12 @@
                                     <tr>
                                         <th>Username</th>
                                         <th>Nama</th>
-                                        <th>jenis_kelamin</th>
-                                        <th>email</th>
-                                        <th>telepon </th>
-                                        <th>alamat</th>
-                                        <th>edit</th>
-                                        <th>hapus</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Email</th>
+                                        <th>Telepon </th>
+                                        <th>Alamat</th>
+                                        <th>Edit</th>
+                                        <th>Hapus</th>
                                     </tr>
                                     <?php foreach ($data['msr'] as $msr) : ?>
                                         <tr>
@@ -74,20 +74,19 @@
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+                <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="formModalLabel">Tambah Data</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <a href="<?= BASEURL;?>/admin/pengguna"><button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                                </button></a>
                             </div>
                             <div class="modal-body">
                                 <form action="<?= BASEURL; ?>/admin/tambah" method="post">
                                     <input type="hidden" name="id" id="id">
                                     <div class="form-group ">
-                                        <label for="username">username</label>
+                                        <label for="username">Username</label>
                                         <input type="text" class="form-control" id="username" name="username" autocomplete="off" required>
                                     </div>
                                     <div class="form-group">
@@ -99,7 +98,7 @@
                                         <input type="hidden" class="form-control" id="deskripsi" name="deskripsi" autocomplete="off" >
                                     </div>
                                     <div class="form-group">
-                                        <label for="jenis_kelamin">jenis_kelamin</label>
+                                        <label for="jenis_kelamin">Jenis Kelamin</label>
                                         <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" autocomplete="off" required>
                                     </div>
                                   
@@ -108,26 +107,25 @@
                                         <input type="email" class="form-control" id="email" name="email" autocomplete="off">
                                     </div>
                                     <div class="form-group">
-                                        <label for="no_telp">telepon</label>
+                                        <label for="no_telp">Telepon</label>
                                         <input type="" class="form-control" id="no_telp" name="no_telp">
                                     </div>
                                    
                                     <div class="form-group">
-                                        <label for="alamat">alamat</label>
+                                        <label for="alamat">Alamat</label>
                                         <input type="text" class="form-control" id="alamat" name="alamat">
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">password</label>
+                                        <label for="password">Password</label>
                                         <input type="text" class="form-control" id="password" name="password">
                                     </div>
                                     <div class="form-group">
-                                        <label for="akses">akses</label>
+                                        <label for="akses">Akses</label>
                                         <input type="text" class="form-control" id="akses" name="akses">
                                     </div>
                                 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Tambah Data</button>
                                 </form>
                             </div>
